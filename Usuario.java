@@ -1,0 +1,72 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package usuarios.medicos;
+
+import java.time.LocalDate;
+
+/**
+ *
+ * @author ameti
+ */
+public class Usuario {
+
+    public String id;
+    public String nombre;
+    public String apellidos;
+    public LocalDate fechaNacimiento;
+    public String telefono;
+    private String contrasenia;
+    public String email;
+    public Rol rol; //PACIENTE, ADMIN, MEDICO USAR ENUMS
+
+    protected String mostrarDatos() {
+        String nombreCompleto = this.nombre + "" + this.apellidos;
+        String datos = String.format("ID: %s,Nombre completo: %s,Fecha de nacimiento: %s, Telefono: %s", this.id, nombreCompleto, this.fechaNacimiento, this.telefono);
+        return datos;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public LocalDate getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public Rol getRol() {
+        return rol;
+    }
+
+    public String getContrasenia() {
+        return contrasenia;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+    
+
+    public Usuario(String id, String nombre, String apellidos, LocalDate fechaNacimiento, String telefono, String contrasenia, Rol rol) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.fechaNacimiento = fechaNacimiento;
+        this.telefono = telefono;
+        this.contrasenia = contrasenia;
+        this.rol = rol;
+    }
+}
